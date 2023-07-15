@@ -1,0 +1,265 @@
+Assignment - 4:
+
+1.Fibonacci Series:
+package JAVAPROGRAMS1;
+import java.util.*;
+
+public class Fibonacciseries {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int x = 1;
+        int y = 1;
+        for(int i=1;i <= n;i++){
+            System.out.println(x + " ");
+            int sum = x+y;
+            x = y;
+            y = sum;
+
+        }
+    }
+}
+ 
+
+2.Calculate the sum of numbers until a negative number is encountered.
+package JAVAPROGRAMS1;
+import java.util.*;
+
+public class sumofnum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int sum = 0;
+        while(sc.hasNextInt()){
+            int num = sc.nextInt();
+            if(num >= 0) {
+                sum += num;
+            }
+            else{
+                sum = -1;
+                break;
+                }
+                System.out.println(sum);
+            }
+        }
+    }
+
+3.To calculate the factorial of a number.
+package JAVAPROGRAMS1;
+import java.util.*;
+
+public class Factorialnum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int ans = 1;
+        for(int i=2;i <= n;i++){
+            ans *= i;
+
+
+        }
+        System.out.println(ans);
+    }
+}
+4.Armstrong numbers.
+ackage JAVAPROGRAMS1;
+import java.util.*;
+
+public class Armstrong {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int num = 1;
+        while (num <= n) {
+            int count = 0;
+            int i = num;
+            while (i > 0) {
+                count++;
+                i /= 0;
+            }
+            int val = num;
+            int sum = 0;
+            while (val > 0) {
+                int digit = val % 10;
+                sum += Math.pow(digit, count);
+                val /= 10;
+                if (sum > val) {
+                    continue;
+                }
+            }
+            if (sum == num) {
+                System.out.println(num);
+            }
+            num++;
+
+        }
+    }
+
+    }
+
+5. Write a program to print the cross pattern given below.
+package PWSkills;
+import java.util.*;
+
+public class CrossPattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+            int size = 5;
+            for(int i = 0;i<size;i++)
+            {
+                for (int j = 0; j < size; j++) {
+                    if (i == j || i + j == size - 1) {
+                        System.out.print("*");
+                    } else {
+                        System.out.print(" ");
+                    }
+
+                }
+                System.out.println();
+            }
+        }
+    }
+
+6.Write a program to print alphabet diamond pattern.
+package PWSkills;
+import java.util.*;
+
+public class Alphabet {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = 5;
+        int alpha = 65;
+        int num = 0;
+        for (int i = 1; i <= size; i++) {
+            for (int j = size; j > i; j--) {
+                System.out.print(" ");
+            }
+            for (int k = 0; k < i * 2 - 1; k++) {
+                System.out.print((char) (alpha + num++));
+            }
+            num = 0;
+            System.out.println();
+        }
+        for (int i = 1; i <= size; i++) {
+            for (int j = 1; j < i; j++) {
+                System.out.print(" ");
+            }
+            for (int k = (size - i) * 2 - 1; k > 0; k--) {
+                System.out.print((char) (alpha + num++));
+            }
+            num = 0;
+            System.out.println();
+        }
+    }
+}
+7.Write a program to print pattern given below.
+package PWSkills;
+import java.sql.SQLOutput;
+import java.util.*;
+
+public class Pattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size = 5;
+        for(int i=0;i<size;i++){
+            for(int j=0;j<size;j++){
+                if( i==size/2){
+                    System.out.print("*");
+                }else{
+                    if(j == size/2){
+                    System.out.print("*");
+                }else{
+                        System.out.print(" ");
+                    }
+
+                    }
+            }
+            System.out.println();
+        }
+    }
+}
+8.print a triangle of prime numbers upto given number of lines of the triangle.
+package PWSkills;
+import java.util.*;
+
+public class Primenumberspattern {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int a;
+        int b;
+        int c;
+        int num = 3;
+        int tem = 0;
+        a = sc.nextInt();
+        int d = a;
+        for(int y = 1;y <= a;y ++){
+            for(int x = 1;x <= d;x ++){
+                System.out.println(" ");
+            }
+            if(y==1){
+                System.out.println("2");
+            }else{
+                for(c=0;c!=y;){
+                    tem = 0;
+                    for(int k = 2;k < num;k ++){
+                        if(num%k == 0)
+                            tem = 1;
+
+                    }
+                    if(tem == 0){
+                        c++;
+                        System.out.println(num+" ");
+                    }
+                    num++;
+                }
+            }
+            System.out.println();
+            d--;
+        }
+
+    }
+}
+9.To check whether a prime Number can be expressed as a Sum of Two Prime Numbers.
+package PWSkills;
+import java.util.*;
+
+public class SumoftwoPrimenum {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        if(isPrimport ime(n) && isPrime(n-2)){
+            System.out.println(true);
+        }else{
+            System.out.println(false);
+
+        }
+    }
+    public static boolean isPrime(int n){
+        if( n<= 1)
+            return false;
+        for(int i = 2;i * i <= n;i++){
+            if(n % i == 0)
+                return false;
+        }
+        return true;
+
+    }
+}
+10.
+package PWSkills;
+import java.util.*;
+public class bulbs {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i = 1;i * i <= n;i ++){
+            System.out.println(i*i +" ");
+        }
+    }
+}
+
+
+
+
+
+
+
